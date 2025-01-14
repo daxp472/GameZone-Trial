@@ -44,6 +44,10 @@ const gameSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  playCount: {
+    type: Number,
+    default: 0
+  },
   difficulty: {
     type: String,
     enum: ['Easy', 'Medium', 'Hard', 'Expert']
@@ -106,6 +110,12 @@ gameSchema.virtual('formattedRating').get(function() {
 // Method to increment download count
 gameSchema.methods.incrementDownloads = function() {
   this.downloadCount += 1;
+  return this.save();
+};
+
+// Method to increment play count
+gameSchema.methods.incrementPlayCount = function() {
+  this.playCount += 1;
   return this.save();
 };
 

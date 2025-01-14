@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
       rating: 1,
       difficulty: 1,
       platforms: 1,
-      downloadCount: 1
+      downloadCount: 1,
+      playCount: 1
     } : {};
     
     const games = await Game.find({ category: 'Racing' }, projection)
@@ -33,7 +34,8 @@ router.get('/:gameId', async (req, res) => {
       rating: 1,
       difficulty: 1,
       platforms: 1,
-      downloadCount: 1
+      downloadCount: 1,
+      playCount: 1
     } : {};
     
     const game = await Game.findOne({ 
@@ -45,8 +47,10 @@ router.get('/:gameId', async (req, res) => {
       return res.status(404).json({ message: 'Game not found' });
     }
 
+    // Increment play count when full game details are requested
     if (!preview) {
-      // If full details requested, get similar games
+      await game.incrementPlayCount();
+      
       const similarGames = await Game.find({
         category: 'Racing',
         gameId: { $ne: game.gameId }
