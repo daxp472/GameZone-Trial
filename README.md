@@ -18,11 +18,15 @@ All category endpoints support preview mode and similar games recommendations.
 - `GET /racing/:gameId` - Get specific racing game (automatically increments play count)
 - `POST /racing/:gameId/download` - Track game download
 
+---
+
 #### Action Games
 - `GET /action` - Get all action games
 - `GET /action?preview=true` - Get preview list of action games
 - `GET /action/:gameId` - Get specific action game (automatically increments play count)
 - `POST /action/:gameId/download` - Track game download
+
+---
 
 #### Puzzle Games
 - `GET /puzzle` - Get all puzzle games
@@ -30,11 +34,15 @@ All category endpoints support preview mode and similar games recommendations.
 - `GET /puzzle/:gameId` - Get specific puzzle game (automatically increments play count)
 - `POST /puzzle/:gameId/download` - Track game download
 
+---
+
 #### Sports Games
 - `GET /sports` - Get all sports games
 - `GET /sports?preview=true` - Get preview list of sports games
 - `GET /sports/:gameId` - Get specific sports game (automatically increments play count)
 - `POST /sports/:gameId/download` - Track game download
+
+---
 
 #### Strategy Games
 - `GET /strategy` - Get all strategy games
@@ -42,20 +50,28 @@ All category endpoints support preview mode and similar games recommendations.
 - `GET /strategy/:gameId` - Get specific strategy game (automatically increments play count)
 - `POST /strategy/:gameId/download` - Track game download
 
+---
+
 #### Adventure Games
 - `GET /adventure` - Get all adventure games
 - `GET /adventure?preview=true` - Get preview list of adventure games
 - `GET /adventure/:gameId` - Get specific adventure game (automatically increments play count)
 - `POST /adventure/:gameId/download` - Track game download
 
+---
+
 ### Search
 - `GET /search/global?q=searchTerm` - Search across all categories
 - `GET /search/category/:category?q=searchTerm` - Search within specific category
+
+---
 
 ### Leaderboard
 - `GET /leaderboard/overall` - Get overall leaderboard
 - `GET /leaderboard/game/:gameId` - Get game-specific leaderboard
 - `PUT /leaderboard/update` - Update player score
+
+---
 
 ## Response Formats
 
